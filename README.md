@@ -2,5 +2,5 @@
 Solution to the Opportunity Hack San Jose 2019
 
 ## Technologies ##
-Front-end: ReactJS, JavaScript
+Front-end: ReactJS, JavaScript  
 Backend: Python
