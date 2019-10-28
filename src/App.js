@@ -18,6 +18,10 @@ function App() {
         >
           Learn React
         </a>
+        <p>
+          <button type="button" id="button" onclick="testFunction()">Backend button test</button>
+        </p>
+        
       </header>
     </div>
   );
