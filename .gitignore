@@ -62,3 +62,10 @@ typings/
 
 # next.js build output
 .next
+
+# vscode settings and workspace
+.vscode
+workspace.code-workspace
+
+# python virtual enviroment
+.venv
