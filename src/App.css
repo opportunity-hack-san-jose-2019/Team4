@@ -2,21 +2,32 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.Header h1 {
+  font-size: 2.7em;
+  font-weight: 700;
+}
+#help {
+  color: #003185;
+}
+#pal {
+  color: #039ddb;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#page {
+  width: 100%;
+  height: 1000px;
+}
+.section01 img {
+  height: 150px;
+}
+.section01 h2 {
+  font-size: 2.1em;
+}
+
+.Footer {
+  height: 120px;
+  background-color: rgb(3, 18, 65);
+}
+.Footer a {
   color: white;
-}
-
-.App-link {
-  color: #09d3ac;
 }
