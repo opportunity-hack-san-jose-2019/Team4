@@ -28,7 +28,7 @@ export default function Incident(props) {
         alt="priority icon"
         src={require(`../images/${props.incident.priority}.png`)}
       />
-      <h1>{props.incident.name}</h1>
+      <h1>{props.incident.title}</h1>
       <br />
       <img
         className="location-img"
@@ -41,7 +41,7 @@ export default function Incident(props) {
         src={require(`../images/${props.incident.image}.jpg`)}
         alt="indicent icon"
       />
-      <button className="category">{props.incident.category}</button>
+      <button className="category">{props.incident.tag}</button>
       <div className="posted-by">
         <img
           className="creator-img"
@@ -50,7 +50,7 @@ export default function Incident(props) {
         />
         <p>
           Published by <br />
-          <span>{props.incident.postedby}</span>
+          <span>{props.incident.creater}</span>
         </p>
       </div>
       <p className="description">{props.incident.description}</p>
@@ -67,6 +67,7 @@ export default function Incident(props) {
             className={voluntering ? "registered" : ""}
             onClick={() => onVolunteer()}
           >
+            {/* Can use /isVolunteering with  */}
             {voluntering ? "Registered" : "Volunteer"}
           </button>
         </div>
