@@ -3,6 +3,13 @@ import socket
 from tag_id import TagID
 from database import Database
 import json
+from bson import ObjectId
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, ObjectId):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
 
 #Start the webserver
 print("\n\nStarting Web Server")
@@ -40,9 +47,9 @@ def addIncident():
     return getIncidents()
 
 @app.route('/getUser')
-def getUser(user_id):
+def getUser():
 
-    # user_id = request.args.get('user_id')
+    user_id = request.args.get('user_id')
 
     first_name, last_name, address, phone_number, dob, interests, profile_image = database.get_user(user_id)
 
@@ -56,6 +63,28 @@ def getUser(user_id):
         'profile_image' : profile_image
     })
 
+@app.route('/isVolunteering')
+def isVolunteering():
+
+    user_id = request.args.get('user_id')
+    incident_id = request.args.get('incident_id')
+
+    return jsonify(isVolunteering=database.is_volunteering(user_id, incident_id))
+
+
+@app.route('/addDonation')
+def addDonation():
+
+    user_id = request.args.get('user_id')
+    incident_id = request.args.get('incident_id')
+    amount = request.args.get('amount')
+
+    database.add_donation(user_id, incident_id, amount)
+
+    return
+
+
+
 @app.route('/getIncidents')
 def getIncidents():
 
@@ -64,12 +93,9 @@ def getIncidents():
     for x in database.get_incident_feed():
         json_list.append(x.return_json())
 
-    print(json.dumps(str(json_list)))
- 
-    return json.dumps(str(json_list))
+    return JSONEncoder().encode(json_list)
 
 if __name__ == '__main__':
-    print(str(getUser('507f1f77bcf86cd799439011')))
-    # app.run(host='localhost', port='3000')
+    app.run(host='localhost', port='3001')
 
 
