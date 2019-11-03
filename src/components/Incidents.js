@@ -301,6 +301,7 @@ export class Incidents extends Component {
                 />
                 <img
                   id="upload"
+                  alt="camera icon"
                   src={require("../images/camera.png")}
                   onClick={this.triggerInputFile}
                 />
