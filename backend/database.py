@@ -58,6 +58,13 @@ class Database:
             self.create_test_data()
 
         return 
+    def add_donation(self, user_id, incident_id, amount):
+
+        # Donate table
+        self.donation_table.insert_one({
+            'donator' : user_id, 
+            'incident_id' : incident_id, 
+            'amount' : amount})
 
     def get_user_id(self, first_name, last_name, dob):
         
@@ -114,32 +121,32 @@ class Database:
             'Osborne',
             str(date(1999, 8, 16)))
 
-        self.create_incident_data(user_id)
+        self.create_incident_data()
 
         # Get incident id
         incident_id = self.user_table.find({}, {'creator' : user_id})[0].get('_id')
 
         # Donate table
         self.donation_table.insert_one({
-            'donator' : user_id, 
+            'donator' : ObjectId('507f191e810c19729de860ea'), 
             'incident_id' : incident_id, 
             'amount' : 100})
 
         # Volunteer Table
         self.volunteers_table.insert_one({
-            'volunteer':    user_id,
+            'volunteer':    ObjectId('507f191e810c19729de860ea'),
             'incident_id':  incident_id,
             'attended':     None
         })
 
-    def create_incident_data(self, user_id):
+    def create_incident_data(self):
 
         self.incident_table.insert_one({
-                    'creator'       : user_id, 
+                    'creator'       : ObjectId('507f1f77bcf86cd799439011'), 
                     'title'         : 'Blankets for the freezing homeless', 
                     'description'   : 'I live in San Francisco. Every morning I walk to work around 7:30 am and come back at 8 pm. With weather starting to get cold, and constant rain, I feel terrible seeing all of the homeless living on the streets, completely freezing, and with no one to help them. I am creating this initiative in order to ease the life of these homeless by buying and delivering them blankets. You can either donate money for the blankets, or help us distribute them. ', 
                     'date_created'  : str(datetime.now), 
-                    'date_verified' : None, 
+                    'date_verified' : str(datetime.now), 
                     'tag'           : 2, 
                     'location'      : 'San Francisco, CA', 
                     'donation_goal' : 400, 
@@ -149,11 +156,11 @@ class Database:
 
 
         self.incident_table.insert_one({
-                    'creator'       : user_id, 
+                    'creator'       : ObjectId('507f191e810c19729de860ea'), 
                     'title'         : 'Help teaching unprivileged children in schools', 
                     'description'   : 'As the director of North Kennedy Tract Elementary school, it is my job to be teaching the children of the future. In an area like North Kennedy Tract, educating children is their only chance to have an education, and not end up in the streets. This is why as a community, we have a vital job to make sure this happens. The North Tract Elementary School however, is lacking serious funding for basic utensils, as well as a desperate need for teacher volunteers.  ', 
                     'date_created'  : str(datetime.now), 
-                    'date_verified' : None, 
+                    'date_verified' : str(datetime.now), 
                     'tag'           : 5, 
                     'location'      : 'Oakland, CA', 
                     'donation_goal' : 1000, 
@@ -163,11 +170,11 @@ class Database:
 
 
         self.incident_table.insert_one({
-                    'creator'       : user_id, 
+                    'creator'       : ObjectId('507f191e810c19729de860ea'), 
                     'title'         : 'Cleaning up Alviso park', 
                     'description'   : 'Whilst on my morning run around Alviso park, I was shocked to see how much plastic was thrown away and left around. We have to understand that leaving suck quantities of plastic in the water is incredibly harmless to our environment, with many fish dying because of it. I am therefore creating an initiative to clean up Alviso park. You can either donate money for the cleaning, or volunteer and come clean it with us.  ', 
                     'date_created'  : str(datetime.now), 
-                    'date_verified' : None, 
+                    'date_verified' : str(datetime.now), 
                     'tag'           : 8, 
                     'location'      : 'Alviso Park, CA', 
                     'donation_goal' : 300, 
@@ -177,11 +184,11 @@ class Database:
 
 
         self.incident_table.insert_one({
-                    'creator'       : user_id, 
+                    'creator'       : ObjectId('507f1f77bcf86cd799439011'), 
                     'title'         : 'Soup Kitchen for the homeless', 
                     'description'   : 'Homelessness in the Bay Area is becoming and larger and larger problem, with San Jose being the 5th city in the United States with the highest population of 2. The soup kitchen is an initiative that will be offering dinner to the homeless in San Jose.', 
                     'date_created'  : str(datetime.now), 
-                    'date_verified' : None, 
+                    'date_verified' : str(datetime.now), 
                     'tag'           : 2, 
                     'location'      : 'San Jose, CA', 
                     'donation_goal' : 1500, 
@@ -191,11 +198,11 @@ class Database:
 
 
         self.incident_table.insert_one({
-                    'creator'       : user_id, 
+                    'creator'       : ObjectId('507f191e810c19729de860ea'), 
                     'title'         : 'Sewa Family Case Management Services', 
                     'description'   : 'Sewa Family Case Management Service team is building a support network in the community. As a member of this network, you can help by providing your pro bono services or becoming a case volunteer, who can actually work in the field. Sewa encourages you to stay informed of our activities, asks you to become our advocate by passing on the word to motivate others and requests you to become our passionate volunteers, so that Sewa can dedicatedly provide services to the community. Donating money will help Sewa help with the following services: Severe Illness, Hospitalization & Health Care, Death & Bereavement, and Family Emergencies. ', 
                     'date_created'  : str(datetime.now), 
-                    'date_verified' : None, 
+                    'date_verified' : str(datetime.now), 
                     'tag'           : 10, 
                     'location'      : 'Bay Area, CA', 
                     'donation_goal' : 5000, 
@@ -205,11 +212,11 @@ class Database:
 
 
         self.incident_table.insert_one({
-                    'creator'       : user_id, 
+                    'creator'       : ObjectId('507f191e810c19729de860ea'), 
                     'title'         : 'Farm burnt by wildfires', 
                     'description'   : 'I am a farmer, and my farm has been me and my family’s life and only source of income. Things were going well for us when we had the farm, but these horrible fires in northern California have taken everything we own. Our farm has been completely burnt down, including all of our cattle and crop. Without this, there is no way I can sustain my family, especially now that my wife has had twins. I need help in order to get back on my feet, whether it is through donations, or volunteering, any help in order to grow my farm again, and be able to put food on the table for my family once again, will go a long way for us. Thank you for your help.  ', 
                     'date_created'  : str(datetime.now), 
-                    'date_verified' : None, 
+                    'date_verified' : str(datetime.now), 
                     'tag'           : 1, 
                     'location'      : 'Morana, CA', 
                     'donation_goal' : 15000, 
@@ -219,11 +226,11 @@ class Database:
 
 
         self.incident_table.insert_one({
-                    'creator'       : user_id, 
+                    'creator'       : ObjectId('507f1f77bcf86cd799439011'), 
                     'title'         : 'Earthquake, house destroyed, need help rebuilding', 
                     'description'   : 'In the past few weeks, there have been various earthquakes around my neighbourhood which have completely destroyed my house, to a point where it is no longer liveable. My family and me are having to live in a motel in the meantime, while we think of what to do. We want to go back home but do not have neither the manpower nor the resources to repair our house. With this incident, we are hoping that someone will help us, either by donating money, or by volunteering to help us restore our house to a liveable standard. Any help will take us a very long way, and my family and me thank you for your help.', 
                     'date_created'  : str(datetime.now), 
-                    'date_verified' : None, 
+                    'date_verified' : str(datetime.now), 
                     'tag'           : 1,
                     'location'      : 'Los Banos, CA', 
                     'donation_goal' : 15000, 
@@ -251,6 +258,14 @@ class Database:
 
         return incident_list
     
+    def is_volunteering(self, user_id, incident_id):
+
+        for x in self.incident_table.find({'volunteer' : ObjectId(user_id), 'incident_id' : incident_id}):
+            return True
+        
+        return False
+
+
     def get_incident_data(self, incident_record):
 
         id = incident_record.get('_id')
@@ -265,6 +280,8 @@ class Database:
         donation_goal = incident_record.get('donation_goal')
         volunteer_goal = incident_record.get('volunteer_goal')
         priority = incident_record.get('priority')
+        creater_image = self.user_table.find_one({'_id': creator }).get('profile_image')
+        creater = self.user_table.find_one({'_id': creator }).get('first_name') + ' ' + self.user_table.find_one({'_id': creator }).get('last_name')
 
         current_donation = 0
 
@@ -276,7 +293,7 @@ class Database:
         for x in self.volunteers_table.find({'incident_id' : id}):
             volunteers += 1
               
-        incident = Incident(id, creator, title, description, date_created, date_verified, tag, location, image, priority, current_donation, donation_goal, current_volunteer, volunteer_goal)
+        incident = Incident(id, creator, title, description, date_created, date_verified, tag, location, image, priority, current_donation, donation_goal, current_volunteer, volunteer_goal, creater_image, creater)
 
         return incident
 

@@ -6,7 +6,8 @@ export class Incidents extends Component {
   state = {
     showIncident: false,
     name: "",
-    incidents: [
+    incidents: [],
+    incidents2: [
       {
         id: 1,
         name: "Farm burnt by wildfires",
@@ -204,10 +205,19 @@ export class Incidents extends Component {
     console.log(fil);
   };
 
+  componentDidMount = async () => {
+    const response = await fetch('http://localhost:3001/getIncidents');
+    const myJson = await response.json();
+    // console.log(JSON.stringify(myJson));
+    this.setState({
+      incidents: [...myJson]
+    })
+  }
+
   render() {
     return (
       <div className="Incidents">
-        <h1>Incidents</h1>
+        <h1 onClick={() => this.fetchData()}>Incidents</h1>
         <span id="add" onClick={() => this.addIncident()}>
           <p
             style={
@@ -222,6 +232,7 @@ export class Incidents extends Component {
         {this.state.incidents.map(el => (
           <Incident incident={el} key={el.id} />
         ))}
+
         <article style={this.showIncident()}>
           <h2>PUBLISH INCIDENT</h2>
           <div className="form">

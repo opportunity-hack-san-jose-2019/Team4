@@ -44,4 +44,9 @@ class TagID:
 
     def get_tag_name(self, id):
 
-        return self.tag_dictionary[id]
+        for key, value in self.tag_dictionary.items(): 
+            if (value == id):
+                return key
+
+
+        return ''
