@@ -102,7 +102,7 @@ export class Incidents extends Component {
           "In the past few weeks, there have been various earthquakes around my neighbourhood which have completely destroyed my house, to a point where it is no longer liveable. My family and me are having to live in a motel in the meantime, while we think of what to do. We want to go back home but do not have neither the manpower nor the resources to repair our house. With this incident, we are hoping that someone will help us, either by donating money, or by volunteering to help us restore our house to a liveable standard. Any help will take us a very long way, and my family and me thank you for your help.",
         category: "Natural Disaster",
         image: "earthquake4",
-        priority: "high",
+        priority: "tick",
         postedby: "Hamza Zizi",
         postedimg: "hamza",
         donation: "1100",
@@ -231,11 +231,6 @@ export class Incidents extends Component {
           <Incident incident={el} key={el.id} />
         ))}
 
-<img
-        className="tick-img"
-        src={require("../images/tick.png")}
-        alt="tick icon"
-      />
         <article style={this.showIncident()}>
           <h2>PUBLISH INCIDENT</h2>
           <div className="form">
