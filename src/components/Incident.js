@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import Popup from "./Popup";
 
 export default function Incident(props) {
   const [voluntering, setVoluntering] = useState(false);
   const [num, setNum] = useState(props.incident.volunteers);
   const [donate, setDonate] = useState(false);
+  const [donation, setDonation] = useState(props.incident.donation);
 
   const onVolunteer = () => {
     setVoluntering(true);
@@ -14,14 +16,19 @@ export default function Incident(props) {
     setDonate(true);
   };
 
+  const getData = value => {
+    setDonation(parseInt(value, 10) + parseInt(donation, 10));
+  };
+
   return (
     <div className="Incident">
       {donate && (
-        <div className="donate-popup">
-          <div className="popped">
-            <img src={require("../images/paypal.png")} />
-          </div>
-        </div>
+        // <div className="donate-popup">
+        //   <div className="popped">
+        //     <img src={require("../images/paypal.png")} />
+        //   </div>
+        // </div>
+        <Popup sendData={getData} />
       )}
       <img
         className="priority-img"
@@ -50,8 +57,10 @@ export default function Incident(props) {
       <div className="actions">
         <div className="action-donate">
           <img src={require("../images/donate.png")} />
-          <p>{props.incident.donation}</p>
+          {/* <p>{props.incident.donation}</p> */}
+          <p>${donation}</p>
           <button onClick={() => onDonate()}>Donate</button>
+          {/* <button>Donate</button> */}
         </div>
         <div>
           <img src={require("../images/volunteer.png")} />

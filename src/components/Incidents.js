@@ -18,7 +18,7 @@ export class Incidents extends Component {
         priority: "high",
         postedby: "Elon Musk",
         postedimg: "elon",
-        donation: "$15000",
+        donation: "15000",
         volunteers: "105"
       },
       {
@@ -32,7 +32,7 @@ export class Incidents extends Component {
         priority: "low",
         postedby: "Sri Shivananda",
         postedimg: "sri",
-        donation: "$400",
+        donation: "400",
         volunteers: "187"
       },
       {
