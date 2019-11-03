@@ -238,6 +238,13 @@ button {
   vertical-align: middle;
   margin: 5px 5px 10px 0;
 }
+.share-img {
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 15px 4px 10px 5px;
+  float: right;
+}
 .creator-img {
   width: 50px;
   border: 1px solid black;
