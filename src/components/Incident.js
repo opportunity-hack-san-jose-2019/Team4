@@ -17,10 +17,13 @@ export default function Incident(props) {
       />
       <button className="category">{props.incident.category}</button>
       <div className="posted-by">
-        <img className="creator-img" src={require("../images/charity.png")} />
+        <img
+          className="creator-img"
+          src={require(`../images/${props.incident.postedimg}.jpeg`)}
+        />
         <p>
-          Posted by <br />
-          <span>Charity Name</span>
+          Published by <br />
+          <span>{props.incident.postedby}</span>
         </p>
       </div>
       <p className="description">{props.incident.description}</p>

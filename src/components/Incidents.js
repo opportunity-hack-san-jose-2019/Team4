@@ -4,6 +4,8 @@ import Incident from "./Incident";
 
 export class Incidents extends Component {
   state = {
+    showIncident: false,
+    name: "",
     incidents: [
       {
         id: 1,
@@ -14,6 +16,8 @@ export class Incidents extends Component {
         category: "Natural Disaster",
         image: "wildfire",
         priority: "high",
+        postedby: "Elon Musk",
+        postedimg: "elon",
         donation: "$1,355",
         volunteers: "105"
       },
@@ -26,6 +30,8 @@ export class Incidents extends Component {
         category: "Natural Disaster",
         image: "flooding",
         priority: "medium",
+        postedby: "Sri Shivananda",
+        postedimg: "sri",
         donation: "$1,610",
         volunteers: "187"
       },
@@ -38,19 +44,201 @@ export class Incidents extends Component {
         category: "Humanity",
         image: "homeless",
         priority: "low",
+        postedby: "Chuck Robbins",
+        postedimg: "chuck",
         donation: "$823",
         volunteers: "65"
       }
     ]
   };
 
+  addIncident() {
+    this.setState({
+      showIncident: !this.state.showIncident
+    });
+  }
+
+  showIncident() {
+    return this.state.showIncident
+      ? {
+          height: "95%"
+        }
+      : { height: "0" };
+  }
+
+  publishIncident() {
+    let newIncident = {
+      id: this.state.incidents.length + 1,
+      name: this.state.name,
+      location: this.state.location,
+      description: this.state.description,
+      category: this.state.category,
+      image: "earthquake",
+      priority: this.state.priority,
+      postedby: "Gustavo Zapata",
+      postedimg: "gustavo",
+      donation: this.state.donation,
+      volunteers: this.state.volunteers
+    };
+    this.setState({
+      incidents: [...this.state.incidents, newIncident]
+    });
+    this.setState({
+      name: "",
+      location: "",
+      description: "",
+      category: "",
+      priority: "",
+      donation: "",
+      volunteers: ""
+    });
+    this.addIncident();
+  }
+
+  triggerInputFile = () => {
+    this.fileInput.click();
+  };
+
+  handleTitle = e => {
+    this.setState({
+      name: e.target.value
+    });
+  };
+  handleLocation = e => {
+    this.setState({
+      location: e.target.value
+    });
+  };
+  handleDescription = e => {
+    this.setState({
+      description: e.target.value
+    });
+  };
+  handleCategory = e => {
+    this.setState({
+      category: e.target.value
+    });
+  };
+  handlePriority = e => {
+    this.setState({
+      priority: e.target.value
+    });
+  };
+  handleDonation = e => {
+    this.setState({
+      donation: e.target.value
+    });
+  };
+  handleVolunteers = e => {
+    this.setState({
+      volunteers: e.target.value
+    });
+  };
+  handleImage = e => {
+    console.log(e);
+  };
+
   render() {
     return (
       <div className="Incidents">
         <h1>Incidents</h1>
+        <span id="add" onClick={() => this.addIncident()}>
+          <p
+            style={
+              this.state.showIncident
+                ? { transform: "rotate(45deg)" }
+                : { transform: "rotate(0deg)" }
+            }
+          >
+            +
+          </p>
+        </span>
         {this.state.incidents.map(el => (
           <Incident incident={el} />
         ))}
+        <article style={this.showIncident()}>
+          <h2>PUBLISH INCIDENT</h2>
+          <div className="form">
+            <div>
+              <p>What is the incident?</p>
+              <input
+                placeholder="E.g. Wildfire"
+                onChange={this.handleTitle}
+                value={this.state.name}
+              />
+              <br />
+              <p>Location</p>
+              <input
+                placeholder="E.g. San Jose"
+                onChange={this.handleLocation}
+                value={this.state.location}
+              />
+              <br />
+              <p>Priority</p>
+              <select
+                onChange={this.handlePriority}
+                value={this.state.priority}
+              >
+                <option disabled selected>
+                  --- Select Priority ---
+                </option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+              <p>Category</p>
+              <select
+                onChange={this.handleCategory}
+                value={this.state.category}
+              >
+                <option disabled selected>
+                  --- Select Category ---
+                </option>
+                <option value="Natural Disaster">Natural Disaster</option>
+                <option value="Humanitary">Humanitary</option>
+                <option value="Animals">Animals</option>
+                <option value="Homeless">Homeless</option>
+              </select>
+              <br />
+              <p>Description</p>
+              <textarea
+                placeholder="E.g. An extreme wildfire is taking over LA..."
+                onChange={this.handleDescription}
+                value={this.state.description}
+              ></textarea>
+              <div className="donation-volunteer">
+                Donation:{" "}
+                <input
+                  placeholder="E.g. $900"
+                  onChange={this.handleDonation}
+                  value={this.state.donation}
+                />
+                <span>----</span>
+                Volunteers:{" "}
+                <input
+                  placeholder="E.g. 100"
+                  onChange={this.handleVolunteers}
+                  value={this.state.volunteers}
+                />
+                <input
+                  type="file"
+                  hidden
+                  ref={fileInput => (this.fileInput = fileInput)}
+                  onChange={this.handleImage}
+                />
+                <img
+                  id="upload"
+                  src={require("../images/camera.png")}
+                  onClick={this.triggerInputFile}
+                />
+              </div>
+              <br />
+            </div>
+          </div>
+          <button id="publish" onClick={() => this.publishIncident()}>
+            Publish
+          </button>
+        </article>
       </div>
     );
   }
