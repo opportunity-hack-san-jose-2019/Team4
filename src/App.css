@@ -243,7 +243,6 @@ button {
   display: inline-block;
   vertical-align: middle;
   margin: 15px 4px 10px 5px;
-  float: right;
 }
 .creator-img {
   width: 50px;
