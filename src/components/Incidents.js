@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
 import Incident from "./Incident";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export class Incidents extends Component {
   state = {
@@ -123,6 +125,10 @@ export class Incidents extends Component {
       : { height: "0" };
   }
 
+  notify = () => {
+    toast("Processing your post!");
+  };
+
   publishIncident() {
     if (
       this.state.name &&
@@ -147,7 +153,7 @@ export class Incidents extends Component {
         volunteers: this.state.volunteers
       };
       this.setState({
-        incidents: [...this.state.incidents, newIncident]
+        incidents: [newIncident, ...this.state.incidents]
       });
       this.setState({
         name: "",
@@ -159,6 +165,7 @@ export class Incidents extends Component {
         volunteers: ""
       });
       this.addIncident();
+      this.notify();
     }
   }
 
@@ -314,6 +321,7 @@ export class Incidents extends Component {
           <button id="publish" onClick={() => this.publishIncident()}>
             Publish
           </button>
+          <ToastContainer />
         </article>
       </div>
     );
