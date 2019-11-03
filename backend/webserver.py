@@ -1,9 +1,13 @@
 from flask import Flask, jsonify, request
 import socket
+from backend.tag_id import TagID
+from backend.database import Database
 
 #Start the webserver
 print("\n\nStarting Web Server")
 app = Flask(__name__)
+
+tag_dictionary = TagID()
 
 #App Config
 app.config.update(
