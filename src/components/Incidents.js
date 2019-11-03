@@ -42,7 +42,7 @@ export class Incidents extends Component {
         location: "North Kennedy Tract, CA",
         description:
           "As the director of North Kennedy Tract Elementary school, it is my job to be teaching the children of the future. In an area like North Kennedy Tract, educating children is their only chance to have an education, and not end up in the streets. This is why as a community, we have a vital job to make sure we can give them the opportunities they deserve. The North Tract Elementary School however, is lacking serious funding for basic utensils, as well as a desperate need for teacher volunteers.",
-        category: "Humanity",
+        category: "Children",
         image: "education",
         priority: "medium",
         postedby: "Chuck Robbins",
@@ -276,7 +276,7 @@ export class Incidents extends Component {
                   --- Select Category ---
                 </option>
                 <option value="Natural Disaster">Natural Disaster</option>
-                <option value="Humanitary">Humanitary</option>
+                <option value="Humanitarian">Humanitarian</option>
                 <option value="Animals">Animals</option>
                 <option value="Homeless">Homeless</option>
               </select>
