@@ -47,7 +47,7 @@ export class Incidents extends Component {
         priority: "medium",
         postedby: "Chuck Robbins",
         postedimg: "chuck",
-        donation: "$1000",
+        donation: "800",
         volunteers: "65"
       },
       {
@@ -61,7 +61,7 @@ export class Incidents extends Component {
         priority: "low",
         postedby: "Gustavo Zapata",
         postedimg: "gustavo",
-        donation: "$1000",
+        donation: "1400",
         volunteers: "65"
       },
       {
@@ -75,7 +75,7 @@ export class Incidents extends Component {
         priority: "low",
         postedby: "Andres Payne",
         postedimg: "andres",
-        donation: "$1000",
+        donation: "1000",
         volunteers: "65"
       },
       {
@@ -89,7 +89,7 @@ export class Incidents extends Component {
         priority: "low",
         postedby: "Moataz Hammouda",
         postedimg: "moa",
-        donation: "$1000",
+        donation: "800",
         volunteers: "65"
       },
       {
@@ -103,7 +103,7 @@ export class Incidents extends Component {
         priority: "high",
         postedby: "Hamza Zizi",
         postedimg: "hamza",
-        donation: "$1000",
+        donation: "1100",
         volunteers: "65"
       }
     ]
