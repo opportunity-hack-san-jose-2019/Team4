@@ -38,10 +38,9 @@ export default function Incident(props) {
       <h3>{props.incident.location}</h3>
       <img
         className="share-img"
-        src={require("../images/sharebutton.png")}
+        src={require("../images/socialmediaicon.png")}
         alt="share icon"
       />
-     
       <img
         className="incident-img"
         src={require(`../images/${props.incident.image}.jpg`)}
