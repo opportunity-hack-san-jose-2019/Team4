@@ -40,7 +40,7 @@ export class Incidents extends Component {
       },
       {
         id: 3,
-        name: "Help teaching unprivileged children in schools",
+        name: "Help teaching underprivileged children in schools",
         location: "North Kennedy Tract, CA",
         description:
           "As the director of North Kennedy Tract Elementary school, it is my job to be teaching the children of the future. In an area like North Kennedy Tract, educating children is their only chance to have an education, and not end up in the streets. This is why as a community, we have a vital job to make sure we can give them the opportunities they deserve. The North Tract Elementary School however, is lacking serious funding for basic utensils, as well as a desperate need for teacher volunteers.",
@@ -96,7 +96,7 @@ export class Incidents extends Component {
       },
       {
         id: 7,
-        name: "Earthquake, house destroyed, need help rebuildings",
+        name: "Earthquake, house destroyed, need help rebuilding",
         location: "Los Banos, CA",
         description:
           "In the past few weeks, there have been various earthquakes around my neighbourhood which have completely destroyed my house, to a point where it is no longer liveable. My family and me are having to live in a motel in the meantime, while we think of what to do. We want to go back home but do not have neither the manpower nor the resources to repair our house. With this incident, we are hoping that someone will help us, either by donating money, or by volunteering to help us restore our house to a liveable standard. Any help will take us a very long way, and my family and me thank you for your help.",
