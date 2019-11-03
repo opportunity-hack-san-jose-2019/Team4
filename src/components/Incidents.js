@@ -12,7 +12,7 @@ export class Incidents extends Component {
         name: "Farm burnt by wildfires",
         location: "San Jose, CA",
         description:
-          "I am a farmer, and my farm has been me and my family’s life and only source of income. Things were going well for us when we had the farm, but these horrible fires in northern California have taken everything we own. Our farm has been completely burnt down, including all of our cattle and crop. Without this, there is no way I can sustain my family, especially now that my wife has had twins. I need help in order to get back on my feet, whether it is through donations, or volunteering, any help in order to grow my farm again, and be able to put food on the table for my family once again, will go a long way for us. Thank you for your help.",
+          "I am a farmer, and my farm has been me and my family’s life and only source of income for as long as I can remember. Things were going well for us when we had the farm, but these horrible fires in northern California have taken everything we own. Our farm has been completely burnt down, including all of our cattle and crop. Without this, there is no way I can sustain my family, especially now that my wife and I have just had twins. I need help in order to get back on my feet, whether it is through donations, or volunteering, any help in order to grow my farm again, will go a long way for us. Thank you for your help.",
         category: "Natural Disaster",
         image: "wildfire",
         priority: "high",
@@ -26,7 +26,7 @@ export class Incidents extends Component {
         name: "Blankets for the freezing homeless",
         location: "San Francisco, CA",
         description:
-          "I live in San Francisco. Every morning I walk to work around 7:30 am and come back at 8 pm. With weather starting to get cold, and constant rain, I feel terrible seeing all of the homeless living on the streets, completely freezing, and with no one to help them. I am creating this initiative in order to ease the life of these homeless by buying and delivering them blankets. You can either donate money for the blankets, or help us distribute them.",
+          "I live in San Francisco. Every morning I walk to work around 7:30 am and come back at 8 pm. With weather starting to get cold, I feel terrible seeing all of the homeless living on the streets, completely freezing, and with no one to help them. I am creating this initiative in order to ease the life of these homeless by buying and delivering them blankets. You can either donate money for the blankets, or help us distribute them.",
         category: "Homeless",
         image: "homeless",
         priority: "low",
@@ -40,7 +40,7 @@ export class Incidents extends Component {
         name: "Help teaching unprivileged children in schools",
         location: "North Kennedy Tract, CA",
         description:
-          "As the director of North Kennedy Tract Elementary school, it is my job to be teaching the children of the future. In an area like North Kennedy Tract, educating children is their only chance to have an education, and not end up in the streets. This is why as a community, we have a vital job to make sure this happens. The North Tract Elementary School however, is lacking serious funding for basic utensils, as well as a desperate need for teacher volunteers.",
+          "As the director of North Kennedy Tract Elementary school, it is my job to be teaching the children of the future. In an area like North Kennedy Tract, educating children is their only chance to have an education, and not end up in the streets. This is why as a community, we have a vital job to make sure we can give them the opportunities they deserve. The North Tract Elementary School however, is lacking serious funding for basic utensils, as well as a desperate need for teacher volunteers.",
         category: "Humanity",
         image: "education",
         priority: "medium",
@@ -54,7 +54,7 @@ export class Incidents extends Component {
         name: "Cleaning up Alviso park",
         location: "Alviso Park, CA",
         description:
-          "Whilst on my morning run around Alviso park, I was shocked to see how much plastic was thrown away and left around. We have to understand that leaving suck quantities of plastic in the water is incredibly harmless to our environment, with many fish dying because of it. I am therefore creating an initiative to clean up Alviso park. You can either donate money for the cleaning, or volunteer and come clean it with us. ",
+          "Whilst on my morning run around Alviso park, I was shocked to see how much plastic was thrown away and left around. We have to understand that leaving such quantities of plastic in the water is incredibly harmless to our environment, with many fish dying because of it. I am therefore creating an incident to help clean up Alviso park. You can either donate money for the cleaning, or volunteer and come clean it with us. ",
         category: "environment",
         image: "water",
         priority: "low",
@@ -68,7 +68,7 @@ export class Incidents extends Component {
         name: "Soup Kitchen for the homeless",
         location: "San Jose, CA",
         description:
-          "Homelessness in the Bay Area is becoming and larger and larger problem, with San Jose being the 5th city in the United States with the highest population of Homeless. The soup kitchen is an incident that will be offering dinner to the homeless in San Jose. We will need both donations in order to fund the food, as well as volunteers who will help us distribute this food to the homeless of San Jose. ",
+          "Homelessness in the Bay Area is becoming a larger and larger problem, with San Jose being the 5th city in the United States with the highest population of Homeless. The soup kitchen is an incident that will be offering dinner to the homeless in San Jose. We will need both donations in order to fund the food, as well as volunteers who will help us distribute this food to the homeless of San Jose. ",
         category: "Homeless",
         image: "soupkitchen",
         priority: "low",
@@ -96,7 +96,7 @@ export class Incidents extends Component {
         name: "Earthquake, house destroyed, need help rebuildings",
         location: "Los Banos, CA",
         description:
-          "n the past few weeks, there have been various earthquakes around my neighbourhood which have completely destroyed my house, to a point where it is no longer liveable. My family and me are having to live in a motel in the meantime, while we think of what to do. We want to go back home but do not have neither the manpower nor the resources to repair our house. With this incident, we are hoping that someone will help us, either by donating money, or by volunteering to help us restore our house to a liveable standard. Any help will take us a very long way, and my family and me thank you for your help.",
+          "In the past few weeks, there have been various earthquakes around my neighbourhood which have completely destroyed my house, to a point where it is no longer liveable. My family and me are having to live in a motel in the meantime, while we think of what to do. We want to go back home but do not have neither the manpower nor the resources to repair our house. With this incident, we are hoping that someone will help us, either by donating money, or by volunteering to help us restore our house to a liveable standard. Any help will take us a very long way, and my family and me thank you for your help.",
         category: "Natural Disaster",
         image: "earthquake4",
         priority: "high",
