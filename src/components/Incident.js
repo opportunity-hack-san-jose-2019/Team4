@@ -50,7 +50,7 @@ export default function Incident(props) {
         />
         <p>
           Published by <br />
-          <span>{props.incident.creater}</span>
+          <span>{props.incident.postedby}</span>
         </p>
       </div>
       <p className="description">{props.incident.description}</p>
