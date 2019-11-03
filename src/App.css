@@ -372,4 +372,89 @@ button {
   .incident-img {
     width: 450px;
   }
+  .modal-content {
+    width: 550px;
+    margin-top: 100px;
+    margin-left: -140px;
+  }
+  .Incidents article .form {
+    width: 550px;
+    margin: 0px auto;
+  }
+  .Incidents article .form input {
+    height: 25px;
+  }
+  .Incidents article h2 {
+    font-size: 1.7em;
+  }
+  #publish {
+    font-size: 1em;
+    padding: 3px 9px;
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  .App {
+    width: 93%;
+  }
+  .Incidents {
+    width: 100%;
+  }
+  .Incidents h1 {
+    font-size: 2.2em;
+  }
+  .Incident {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  .Incident h1 {
+    width: 95%;
+    margin-left: 10px;
+    font-size: 1.7em;
+  }
+  .incident-img {
+    width: 95%;
+    margin-left: 10px;
+  }
+  .priority-img {
+    margin-left: 10px;
+  }
+  .location-img {
+    margin-left: 10px;
+  }
+  .posted-by {
+    margin-left: 8px;
+    width: 90%;
+    /* border: 1px solid red; */
+  }
+  .description {
+    width: 96%;
+    margin: 5px auto;
+  }
+  .category {
+    margin-right: 13px;
+  }
+  .modal-content {
+    width: 450px;
+    margin-top: 100px;
+    margin-left: -100px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .modal-dialog {
+    width: 100%;
+    margin: 0;
+  }
+  .modal-content {
+    width: 100%;
+    margin-left: 60px;
+  }
+  .Incident {
+    padding-left: 0px;
+  }
+  .Incidents article .form {
+    width: 80%;
+    margin: 0px auto;
+  }
 }
