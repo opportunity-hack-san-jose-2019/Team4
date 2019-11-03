@@ -263,7 +263,6 @@ export class Incidents extends Component {
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
-                
               </select>
               <p>Category</p>
               <select

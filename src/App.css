@@ -250,6 +250,7 @@ button {
   display: inline-block;
   vertical-align: middle;
   margin: 15px 4px 10px 5px;
+  float: right;
 }
 .creator-img {
   width: 50px;
@@ -446,8 +447,8 @@ button {
     margin: 0;
   }
   .modal-content {
-    width: 100%;
-    margin-left: 60px;
+    width: 400px;
+    margin-left: 50px;
   }
   .Incident {
     padding-left: 0px;
