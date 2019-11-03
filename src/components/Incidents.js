@@ -56,7 +56,7 @@ export class Incidents extends Component {
         location: "Alviso Park, CA",
         description:
           "Whilst on my morning run around Alviso park, I was shocked to see how much plastic was thrown away and left around. We have to understand that leaving such quantities of plastic in the water is incredibly harmless to our environment, with many fish dying because of it. I am therefore creating an incident to help clean up Alviso park. You can either donate money for the cleaning, or volunteer and come clean it with us. ",
-        category: "environment",
+        category: "Environment",
         image: "water",
         priority: "low",
         postedby: "Gustavo Zapata",
