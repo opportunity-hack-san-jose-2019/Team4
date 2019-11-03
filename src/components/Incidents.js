@@ -233,6 +233,11 @@ export class Incidents extends Component {
           <Incident incident={el} key={el.id} />
         ))}
 
+<img
+        className="tick-img"
+        src={require("../images/tick.png")}
+        alt="tick icon"
+      />
         <article style={this.showIncident()}>
           <h2>PUBLISH INCIDENT</h2>
           <div className="form">
@@ -265,6 +270,7 @@ export class Incidents extends Component {
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
+                
               </select>
               <p>Category</p>
               <select

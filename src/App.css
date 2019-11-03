@@ -238,8 +238,15 @@ button {
   vertical-align: middle;
   margin: 5px 5px 10px 0;
 }
+.tick-img {
+  width: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px 5px 10px 0;
+  display: none;
+}
 .share-img {
-  width: 20px;
+  width: 80px;
   display: inline-block;
   vertical-align: middle;
   margin: 15px 4px 10px 5px;
