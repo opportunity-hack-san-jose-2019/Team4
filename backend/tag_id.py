@@ -3,8 +3,16 @@ class TagID:
     def __init__(self):
 
         self.tag_dictionary = {
-            "Flooding" : 1,
-            "Fire " : 2
+            'Natural Disaster': 1,
+            'Homeless':         2,
+            'Animals':          3, 
+            'Health':           4, 
+            'Children':         5, 
+            'Immigration':      6, 
+            'Culture':          7, 
+            'Enviroment':       8, 
+            'Cleaning up':      9, 
+            'Family':           10
         }
 
         return
