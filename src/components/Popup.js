@@ -7,6 +7,8 @@ import Button from "react-bootstrap/Button";
 import paypal from "../images/paypal.png";
 import Sewa from "../images/Sewa.png";
 
+// import Donate from "../images/donate.png";
+
 import Form from "react-bootstrap/Form";
 import Spinner from "react-bootstrap/Spinner";
 
@@ -35,10 +37,10 @@ function Popup(props) {
 
   function myTimer() {
     var intervalObject = setInterval(function() {
-      if (count === 1) {
+      if (count == 1) {
         count--;
         toggleHandler();
-      } else if (count === 0) {
+      } else if (count == 0) {
         toggleHandler2();
         clearInterval(intervalObject);
       } else {
@@ -122,11 +124,10 @@ function Popup(props) {
                     height: "20%",
                     paddingBottom: "18px"
                   }}
-                  alt="image02"
                   src={paypal}
                 />
                 <div style={{ textAlign: "center", display: "block" }}>
-                  <img style={{ width: "80px" }} src={Sewa} alt="image03"></img>
+                  <img style={{ width: "80px" }} src={Sewa}></img>
                 </div>
                 <br />
               </div>
@@ -142,9 +143,8 @@ function Popup(props) {
               <div
                 style={{
                   textAlign: "center",
-                  width: "86%",
-                  marginLeft: "auto",
-                  marginRight: "auto",
+                  width: "82%",
+                  marginLeft:'6%',
                   paddingBottom: "16px",
                   paddingTop: "11px"
                 }}
@@ -170,12 +170,12 @@ function Popup(props) {
               <div
                 onClick={handleClose}
                 style={{
-                  height: "47px",
+                  height: "5px",
                   cursor: "pointer",
                   lineHeight: "47px",
                   borderRadius: "23px",
-                  width: "22%",
-                  paddingBottom: "50px",
+                  width: "24%",
+                  paddingBottom: "44px",
                   textAlign: "center",
                   background: "#007bff",
                   marginLeft: "auto",
@@ -187,9 +187,8 @@ function Popup(props) {
                 {" "}
                 <p
                   style={{ color: "white" }}
-                  onClick={() => donateAction(donationPop)}
-                >
-                  Donate NOW
+                  onClick={() => donateAction(donationPop)}>
+                  Donate 
                 </p>
               </div>
               <br></br>
@@ -199,7 +198,6 @@ function Popup(props) {
               <div style={{ textAlign: "center", display: "block" }}>
                 {" "}
                 <img
-                  alt="image03"
                   style={{
                     width: "140px",
                     height: "20%",
@@ -233,7 +231,6 @@ function Popup(props) {
               <div style={{ textAlign: "center" }}>
                 {" "}
                 <img
-                  alt="image04"
                   style={{
                     width: "140px",
                     height: "20%",
@@ -247,9 +244,8 @@ function Popup(props) {
                 <div
                   style={{
                     textAlign: "center",
-                    width: "86%",
-                    marginLeft: "auto",
-                    marginRight: "auto"
+                    width: "82%",
+                    marginLeft: "6%",
                   }}
                 >
                   <Form.Control
@@ -262,10 +258,8 @@ function Popup(props) {
                 <div
                   style={{
                     textAlign: "center",
-                    width: "86%",
-                    paddingBottom: "4px",
-                    marginLeft: "auto",
-                    marginRight: "auto"
+                    width: "82%",
+                    marginLeft: "6%",
                   }}
                 >
                   <Form.Control type="password" placeholder="Password" />
@@ -277,7 +271,7 @@ function Popup(props) {
               <div
                 onClick={myTimer}
                 style={{
-                  height: "47px",
+                  height: "27px",
                   cursor: "pointer",
                   lineHeight: "47px",
                   borderRadius: "4px",
