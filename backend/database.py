@@ -7,6 +7,7 @@ import numpy
 import os
 from io import StringIO
 from datatypes import Incident
+from bson.objectid import ObjectId
 
 # Current Tables:
 
@@ -50,15 +51,11 @@ class Database:
         self.incident_table = self.db["Incidents"]
         self.volunteers_table = self.db["Volunteers"]
 
-        self.create_test_data()
-
-        # self.get_incident_feed()
-
-        # image = self.image_db.get(self.user_table.find()[0].get('profile_image'))
-        # new_image = open('image.jpg', 'wb')
-        # new_image.write(image.read())
-        # new_image.close()
-        # image.close()
+        if bool('Database' in self.myclient.list_database_names()):
+            print('Data already exists')
+        else:
+            print('Inserting Data into database')
+            self.create_test_data()
 
         return 
 
@@ -68,7 +65,7 @@ class Database:
 
     def get_user(self, user_id):
 
-        user = self.user_table.find({'_id' : user_id})
+        user = self.user_table.find_one({'_id': ObjectId(user_id) })
 
         first_name = user.get('first_name')
         last_name = user.get('last_name')
@@ -88,14 +85,11 @@ class Database:
 
         return self.donation_table.find({}, {'donator' : donator, 'incident' : incident, 'amount' : amount})[0].get('_id')
 
-    def get_incidents(self):
-
-        return
-
     def create_test_data(self):
 
         # User table
         self.user_table.insert_one({
+            '_id'            : ObjectId('507f1f77bcf86cd799439011'),
             'first_name'     : 'Callum', 
             'last_name'      : 'Osborne', 
             'address'        : '95134', 
@@ -103,6 +97,16 @@ class Database:
             'dob'            : str(date(1999, 8, 16)), 
             'interests'      : [0],
             'profile_image'  : 'callum.jpg'})
+
+        self.user_table.insert_one({
+            '_id'            : ObjectId('507f191e810c19729de860ea'),
+            'first_name'     : 'Gustavo', 
+            'last_name'      : 'Zapata', 
+            'address'        : '95134', 
+            'phone_number'   : '669278456', 
+            'dob'            : str(date(1989, 8, 16)), 
+            'interests'      : [8],
+            'profile_image'  : 'gustavo.jpeg'})
 
         # Get user id
         user_id = self.get_user_id(
@@ -139,7 +143,7 @@ class Database:
                     'tag'           : 2, 
                     'location'      : 'San Francisco, CA', 
                     'donation_goal' : 400, 
-                    'image'         : self.get_image_key('backend/image/imagename.jpg'),  
+                    'image'         : 'homeless.jpg',  
                     'volunteer_goal': 100,
                     'priority'      : 1})
 
@@ -153,7 +157,7 @@ class Database:
                     'tag'           : 5, 
                     'location'      : 'Oakland, CA', 
                     'donation_goal' : 1000, 
-                    'image'         : self.get_image_key('backend/image/imagename.jpg'),  
+                    'image'         : 'education.jpg',  
                     'volunteer_goal': 100,
                     'priority'      : 2})
 
@@ -167,7 +171,7 @@ class Database:
                     'tag'           : 8, 
                     'location'      : 'Alviso Park, CA', 
                     'donation_goal' : 300, 
-                    'image'         : self.get_image_key('backend/image/imagename.jpg'),  
+                    'image'         : 'water.jpg',  
                     'volunteer_goal': 100,
                     'priority'      : 2})
 
@@ -181,7 +185,7 @@ class Database:
                     'tag'           : 2, 
                     'location'      : 'San Jose, CA', 
                     'donation_goal' : 1500, 
-                    'image'         : self.get_image_key('backend/image/imagename.jpg'),  
+                    'image'         : 'soupkitchen.jpg',  
                     'volunteer_goal': 100,
                     'priority'      : 2})
 
@@ -195,7 +199,7 @@ class Database:
                     'tag'           : 10, 
                     'location'      : 'Bay Area, CA', 
                     'donation_goal' : 5000, 
-                    'image'         : self.get_image_key('backend/image/imagename.jpg'),  
+                    'image'         : 'family.jpg',  
                     'volunteer_goal': 100,
                     'priority'      : 1})
 
@@ -209,7 +213,7 @@ class Database:
                     'tag'           : 1, 
                     'location'      : 'Morana, CA', 
                     'donation_goal' : 15000, 
-                    'image'         : self.get_image_key('backend/image/imagename.jpg'),  
+                    'image'         : 'wildfire.jpg',  
                     'volunteer_goal': 100,
                     'priority'      : 3})
 
@@ -223,7 +227,7 @@ class Database:
                     'tag'           : 1,
                     'location'      : 'Los Banos, CA', 
                     'donation_goal' : 15000, 
-                    'image'         : self.get_image_key('backend/image/imagename.jpg'), 
+                    'image'         : 'earthquake.jpg', 
                     'volunteer_goal': 100,
                     'priority'      : 3})
 
@@ -290,4 +294,4 @@ class Database:
                     'volunteer_goal': volunteer_goal,
                     'priority'      : priority})
 
-#download = Database('localhost', '27017')
+# download = Database('localhost', '27017')

@@ -40,9 +40,9 @@ def addIncident():
     return getIncidents()
 
 @app.route('/getUser')
-def getUser():
+def getUser(user_id):
 
-    user_id = request.args.get('user_id')
+    # user_id = request.args.get('user_id')
 
     first_name, last_name, address, phone_number, dob, interests, profile_image = database.get_user(user_id)
 
@@ -69,7 +69,7 @@ def getIncidents():
     return json.dumps(str(json_list))
 
 if __name__ == '__main__':
-    getIncidents()
+    print(str(getUser('507f1f77bcf86cd799439011')))
     # app.run(host='localhost', port='3000')
 
 
