@@ -12,11 +12,12 @@ import Sewa from "../images/Sewa.png";
 import Form from "react-bootstrap/Form";
 import Spinner from "react-bootstrap/Spinner";
 
+var init= 25;
 function Popup(props) {
   const [show, setShow] = useState(true);
   const [toggled, toggle] = useState(false);
   const [toggled2, toggle2] = useState(false);
-  const [donationPop, setDonationPop] = useState("");
+  const [donationPop, setDonationPop] = useState(init);
 
   var count = 1;
 
@@ -133,10 +134,10 @@ function Popup(props) {
               </div>
 
               <ButtonGroup className="test" aria-label="First group">
-                <Button>$25</Button>
-                <Button>$50</Button>
-                <Button>$75</Button>
-                <Button>$100</Button>
+                <Button value={25} onClick={handleChange}>$25</Button>
+                <Button value={50} onClick={handleChange}>$50</Button>
+                <Button value={75} onClick={handleChange}>$75</Button>
+                <Button value={100} onClick={handleChange}>$100</Button>
               </ButtonGroup>
               <p></p>
 
