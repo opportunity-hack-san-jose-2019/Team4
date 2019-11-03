@@ -12,7 +12,7 @@ import Sewa from "../images/Sewa.png";
 import Form from "react-bootstrap/Form";
 import Spinner from "react-bootstrap/Spinner";
 
-var init= 25;
+var init = 25;
 function Popup(props) {
   const [show, setShow] = useState(true);
   const [toggled, toggle] = useState(false);
@@ -38,10 +38,10 @@ function Popup(props) {
 
   function myTimer() {
     var intervalObject = setInterval(function() {
-      if (count == 1) {
+      if (count === 1) {
         count--;
         toggleHandler();
-      } else if (count == 0) {
+      } else if (count === 0) {
         toggleHandler2();
         clearInterval(intervalObject);
       } else {
@@ -134,10 +134,18 @@ function Popup(props) {
               </div>
 
               <ButtonGroup className="test" aria-label="First group">
-                <Button value={25} onClick={handleChange}>$25</Button>
-                <Button value={50} onClick={handleChange}>$50</Button>
-                <Button value={75} onClick={handleChange}>$75</Button>
-                <Button value={100} onClick={handleChange}>$100</Button>
+                <Button value={25} onClick={handleChange}>
+                  $25
+                </Button>
+                <Button value={50} onClick={handleChange}>
+                  $50
+                </Button>
+                <Button value={75} onClick={handleChange}>
+                  $75
+                </Button>
+                <Button value={100} onClick={handleChange}>
+                  $100
+                </Button>
               </ButtonGroup>
               <p></p>
 
@@ -145,7 +153,7 @@ function Popup(props) {
                 style={{
                   textAlign: "center",
                   width: "82%",
-                  marginLeft:'6%',
+                  marginLeft: "6%",
                   paddingBottom: "16px",
                   paddingTop: "11px"
                 }}
@@ -188,8 +196,9 @@ function Popup(props) {
                 {" "}
                 <p
                   style={{ color: "white" }}
-                  onClick={() => donateAction(donationPop)}>
-                  Donate 
+                  onClick={() => donateAction(donationPop)}
+                >
+                  Donate
                 </p>
               </div>
               <br></br>
@@ -246,7 +255,7 @@ function Popup(props) {
                   style={{
                     textAlign: "center",
                     width: "82%",
-                    marginLeft: "6%",
+                    marginLeft: "6%"
                   }}
                 >
                   <Form.Control
@@ -260,7 +269,7 @@ function Popup(props) {
                   style={{
                     textAlign: "center",
                     width: "82%",
-                    marginLeft: "6%",
+                    marginLeft: "6%"
                   }}
                 >
                   <Form.Control type="password" placeholder="Password" />
