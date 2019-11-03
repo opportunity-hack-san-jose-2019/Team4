@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Incident(props) {
+  const [voluntering, setVoluntering] = useState(false);
+  const [num, setNum] = useState(props.incident.volunteers);
+
+  const onVolunteer = () => {
+    setVoluntering(true);
+    setNum(parseInt(num, 10) + 1);
+  };
+
   return (
     <div className="Incident">
       <img
@@ -35,8 +43,13 @@ export default function Incident(props) {
         </div>
         <div>
           <img src={require("../images/volunteer.png")} />
-          <p>{props.incident.volunteers}</p>
-          <button>Volunteer</button>
+          <p>{num}</p>
+          <button
+            className={voluntering ? "registered" : ""}
+            onClick={() => onVolunteer()}
+          >
+            {voluntering ? "Registered" : "Volunteer"}
+          </button>
         </div>
       </div>
     </div>

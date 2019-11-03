@@ -190,6 +190,9 @@
 #add:hover {
   transform: scale(1.3);
 }
+button {
+  outline: none;
+}
 
 .Incident {
   /* border: 1px solid blue; */
@@ -285,6 +288,17 @@
   font-size: 1em;
   transition: all 0.3s;
   cursor: pointer;
+}
+.actions div .registered {
+  border: none;
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: auto;
+  pointer-events: none;
+}
+.actions div .registered:hover {
+  background-color: transparent;
+  color: #1f4645;
 }
 .actions div button:hover {
   background-color: #1f4645;

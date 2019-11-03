@@ -67,32 +67,42 @@ export class Incidents extends Component {
   }
 
   publishIncident() {
-    let newIncident = {
-      id: this.state.incidents.length + 1,
-      name: this.state.name,
-      location: this.state.location,
-      description: this.state.description,
-      category: this.state.category,
-      image: "earthquake",
-      priority: this.state.priority,
-      postedby: "Gustavo Zapata",
-      postedimg: "gustavo",
-      donation: this.state.donation,
-      volunteers: this.state.volunteers
-    };
-    this.setState({
-      incidents: [...this.state.incidents, newIncident]
-    });
-    this.setState({
-      name: "",
-      location: "",
-      description: "",
-      category: "",
-      priority: "",
-      donation: "",
-      volunteers: ""
-    });
-    this.addIncident();
+    if (
+      this.state.name &&
+      this.state.location &&
+      this.state.description &&
+      this.state.priority &&
+      this.state.category &&
+      this.state.volunteers &&
+      this.state.donation
+    ) {
+      let newIncident = {
+        id: this.state.incidents.length + 1,
+        name: this.state.name,
+        location: this.state.location,
+        description: this.state.description,
+        category: this.state.category,
+        image: "earthquake",
+        priority: this.state.priority,
+        postedby: "Gustavo Zapata",
+        postedimg: "gustavo",
+        donation: this.state.donation,
+        volunteers: this.state.volunteers
+      };
+      this.setState({
+        incidents: [...this.state.incidents, newIncident]
+      });
+      this.setState({
+        name: "",
+        location: "",
+        description: "",
+        category: "",
+        priority: "",
+        donation: "",
+        volunteers: ""
+      });
+      this.addIncident();
+    }
   }
 
   triggerInputFile = () => {
@@ -134,8 +144,8 @@ export class Incidents extends Component {
       volunteers: e.target.value
     });
   };
-  handleImage = e => {
-    console.log(e);
+  handleImage = fil => {
+    console.log(fil);
   };
 
   render() {
@@ -154,7 +164,7 @@ export class Incidents extends Component {
           </p>
         </span>
         {this.state.incidents.map(el => (
-          <Incident incident={el} />
+          <Incident incident={el} key={el.id} />
         ))}
         <article style={this.showIncident()}>
           <h2>PUBLISH INCIDENT</h2>
@@ -165,6 +175,7 @@ export class Incidents extends Component {
                 placeholder="E.g. Wildfire"
                 onChange={this.handleTitle}
                 value={this.state.name}
+                required
               />
               <br />
               <p>Location</p>
@@ -172,12 +183,14 @@ export class Incidents extends Component {
                 placeholder="E.g. San Jose"
                 onChange={this.handleLocation}
                 value={this.state.location}
+                required
               />
               <br />
               <p>Priority</p>
               <select
                 onChange={this.handlePriority}
                 value={this.state.priority}
+                required
               >
                 <option disabled selected>
                   --- Select Priority ---
@@ -190,6 +203,7 @@ export class Incidents extends Component {
               <select
                 onChange={this.handleCategory}
                 value={this.state.category}
+                required
               >
                 <option disabled selected>
                   --- Select Category ---
@@ -205,6 +219,7 @@ export class Incidents extends Component {
                 placeholder="E.g. An extreme wildfire is taking over LA..."
                 onChange={this.handleDescription}
                 value={this.state.description}
+                required
               ></textarea>
               <div className="donation-volunteer">
                 Donation:{" "}
@@ -212,6 +227,7 @@ export class Incidents extends Component {
                   placeholder="E.g. $900"
                   onChange={this.handleDonation}
                   value={this.state.donation}
+                  required
                 />
                 <span>----</span>
                 Volunteers:{" "}
@@ -219,12 +235,13 @@ export class Incidents extends Component {
                   placeholder="E.g. 100"
                   onChange={this.handleVolunteers}
                   value={this.state.volunteers}
+                  required
                 />
                 <input
                   type="file"
                   hidden
                   ref={fileInput => (this.fileInput = fileInput)}
-                  onChange={this.handleImage}
+                  onChange={() => this.handleImage(this)}
                 />
                 <img
                   id="upload"
