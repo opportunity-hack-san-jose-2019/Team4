@@ -28,7 +28,7 @@ export default function Incident(props) {
         alt="priority icon"
         src={require(`../images/${props.incident.priority}.png`)}
       />
-      <h1>{props.incident.title}</h1>
+      <h1>{props.incident.name}</h1>
       <br />
       <img
         className="location-img"
@@ -41,7 +41,7 @@ export default function Incident(props) {
         src={require(`../images/${props.incident.image}.jpg`)}
         alt="indicent icon"
       />
-      <button className="category">{props.incident.tag}</button>
+      <button className="category">{props.incident.category}</button>
       <div className="posted-by">
         <img
           className="creator-img"

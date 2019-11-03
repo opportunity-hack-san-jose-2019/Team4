@@ -6,8 +6,8 @@ export class Incidents extends Component {
   state = {
     showIncident: false,
     name: "",
-    incidents: [],
-    incidents2: [
+    incidents2: [],
+    incidents: [
       {
         id: 1,
         name: "Farm burnt by wildfires",
@@ -206,13 +206,13 @@ export class Incidents extends Component {
   };
 
   componentDidMount = async () => {
-    const response = await fetch('http://localhost:3001/getIncidents');
+    const response = await fetch("http://localhost:3001/getIncidents");
     const myJson = await response.json();
     // console.log(JSON.stringify(myJson));
     this.setState({
       incidents: [...myJson]
-    })
-  }
+    });
+  };
 
   render() {
     return (
