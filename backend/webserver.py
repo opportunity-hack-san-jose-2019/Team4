@@ -38,7 +38,23 @@ def addIncident():
     database.add_incident(user_id, creator, title, description, tag_dictionary.get_id(tag), location, image, priority, donation_goal, volunteer_goal)
 
     return getIncidents()
-    
+
+@app.route('/getUser')
+def getUser():
+
+    user_id = request.args.get('user_id')
+
+    first_name, last_name, address, phone_number, dob, interests, profile_image = database.get_user(user_id)
+
+    return json.dumps({
+        'first_name'    : first_name, 
+        'last_name'     : last_name,
+        'address'       : address,
+        'phone_number'  : phone_number,
+        'dob'           : dob,
+        'interests'     : interests,
+        'profile_image' : profile_image
+    })
 
 @app.route('/getIncidents')
 def getIncidents():

@@ -66,6 +66,20 @@ class Database:
         
         return self.user_table.find({}, {'_id': 1, 'first_name' : first_name, 'last_name' : last_name, 'dob': dob})[0].get('_id')
 
+    def get_user(self, user_id):
+
+        user = self.user_table.find({'_id' : user_id})
+
+        first_name = user.get('first_name')
+        last_name = user.get('last_name')
+        address = user.get('address')
+        phone_number = user.get('phone_number')
+        dob = user.get('dob')
+        interests = user.get('interests')
+        profile_image = user.get('profile_image')
+
+        return first_name, last_name, address, phone_number, dob, interests, profile_image
+
     def get_incident_id(self, creator, title, date_created):
 
         return self.incident_table.find({}, {'creator' : creator, 'title' : title, 'date_created' : date_created})[0].get('_id')
@@ -247,8 +261,6 @@ class Database:
         volunteer_goal = incident_record.get('volunteer_goal')
         priority = incident_record.get('priority')
 
-        image = self.image_db.get(incident_record.get('image')).read()
-
         current_donation = 0
 
         for x in self.donation_table.find({'incident_id' : id}):
@@ -277,7 +289,5 @@ class Database:
                     'image'         : image,  
                     'volunteer_goal': volunteer_goal,
                     'priority'      : priority})
-
-
 
 #download = Database('localhost', '27017')

@@ -30,7 +30,7 @@ class Incident:
             'date_verified':    self.date_verified,
             'tag':              self.tag,
             'location':         self.location,
-            'image':            self.image, # Sort location
+            'image':            self.image,
             'priority':         self.priority,
             'current_donation': self.current_donation,
             'donation_goal':    self.donation_goal,
