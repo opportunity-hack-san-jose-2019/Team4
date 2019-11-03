@@ -49,9 +49,6 @@
 .section01 {
   margin: 60px auto;
 }
-.section01 img {
-  height: 150px;
-}
 .section01 h2 {
   font-size: 2.1em;
 }
@@ -60,27 +57,107 @@
   color: var(--purple);
   font-size: 2.5em;
   text-transform: uppercase;
+  margin-bottom: -50px;
 }
 
 .Incident {
   /* border: 1px solid blue; */
   /* background-color: rgb(245, 245, 245); */
-  margin: 100px auto;
+  margin: 150px auto;
+  width: 555px;
+  /* border: 1px solid red; */
+  text-align: left;
 }
 .Incident h1 {
   color: black;
   font-size: 1.8em;
   font-weight: 500;
+  display: inline-block;
   margin: 0;
+  margin-left: 5px;
+  /* margin-bottom: 5px; */
   text-transform: capitalize;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
-.Incident p {
+.Incident h3 {
+  display: inline-block;
+  margin: 0;
+  /* color: var(--purple); */
+  font-weight: 500;
+  font-size: 1em;
+  color: rgb(12, 84, 240);
 }
-.Incident img {
+.incident-img {
   width: 550px;
-  height: auto;
   border: 3px solid black;
+}
+.priority-img {
+  width: 30px;
+}
+.location-img {
+  width: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px 5px 10px 0;
+}
+.creator-img {
+  width: 50px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 10px 10px 10px 0;
+  vertical-align: top;
+}
+.category {
+  float: right;
+  /* background-color: transparent; */
+  background-color: var(--purple);
+  border: 1px solid var(--purple);
+  /* color: var(--purple); */
+  border-radius: 2px;
+  font-size: 0.7em;
+  font-weight: 700;
+  color: white;
+}
+.posted-by p {
+  display: inline-block;
+  margin: 10px 0;
+  font-size: 0.8em;
+}
+.posted-by p span {
+  font-size: 1.5em;
+}
+.description {
+  margin-top: 0;
+}
+.actions {
+  /* border: 1px solid blue; */
+  text-align: center;
+  /* padding: 0; */
+}
+.actions div {
+  display: inline-block;
+  margin: 0 30px;
+}
+.actions div p {
+  margin: 0;
+}
+.actions div button {
+  background-color: transparent;
+  border: 2px solid #1f4645;
+  color: #1f4645;
+  padding: 5px 10px;
+  margin-top: 8px;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.actions div button:hover {
+  background-color: #1f4645;
+  color: white;
+}
+.actions div img {
+  width: 40px;
 }
 
 .Footer {
