@@ -261,6 +261,7 @@ class Database:
         date_verified = incident_record.get('date_verified')
         tag = incident_record.get('tag')
         location = incident_record.get('location')
+        location = incident_record.get('image')
         donation_goal = incident_record.get('donation_goal')
         volunteer_goal = incident_record.get('volunteer_goal')
         priority = incident_record.get('priority')
