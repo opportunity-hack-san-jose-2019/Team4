@@ -47,7 +47,7 @@ export class Incidents extends Component {
         priority: "medium",
         postedby: "Chuck Robbins",
         postedimg: "chuck",
-        donation: "$1000",
+        donation: "800",
         volunteers: "65"
       },
       {
@@ -56,12 +56,12 @@ export class Incidents extends Component {
         location: "Alviso Park, CA",
         description:
           "Whilst on my morning run around Alviso park, I was shocked to see how much plastic was thrown away and left around. We have to understand that leaving such quantities of plastic in the water is incredibly harmless to our environment, with many fish dying because of it. I am therefore creating an incident to help clean up Alviso park. You can either donate money for the cleaning, or volunteer and come clean it with us. ",
-        category: "environment",
+        category: "Environment",
         image: "water",
         priority: "low",
         postedby: "Gustavo Zapata",
         postedimg: "gustavo",
-        donation: "$1000",
+        donation: "1400",
         volunteers: "65"
       },
       {
@@ -75,7 +75,7 @@ export class Incidents extends Component {
         priority: "low",
         postedby: "Andres Payne",
         postedimg: "andres",
-        donation: "$1000",
+        donation: "1000",
         volunteers: "65"
       },
       {
@@ -89,7 +89,7 @@ export class Incidents extends Component {
         priority: "low",
         postedby: "Moataz Hammouda",
         postedimg: "moa",
-        donation: "$1000",
+        donation: "800",
         volunteers: "65"
       },
       {
@@ -103,7 +103,7 @@ export class Incidents extends Component {
         priority: "high",
         postedby: "Hamza Zizi",
         postedimg: "hamza",
-        donation: "$1000",
+        donation: "1100",
         volunteers: "65"
       }
     ]
