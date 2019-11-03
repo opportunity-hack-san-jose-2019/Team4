@@ -19,7 +19,7 @@ def webhook():
     print(request.json)
     return '', 200
 
-@app.route('/test')
+@app.route('/getUser')
 def test():
     print('This is a test')
     return jsonify(ret='This is the return from the test')
