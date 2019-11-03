@@ -67,7 +67,6 @@ export default function Incident(props) {
             className={voluntering ? "registered" : ""}
             onClick={() => onVolunteer()}
           >
-            {/* Can use /isVolunteering with  */}
             {voluntering ? "Registered" : "Volunteer"}
           </button>
         </div>

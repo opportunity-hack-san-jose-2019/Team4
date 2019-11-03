@@ -205,19 +205,10 @@ export class Incidents extends Component {
     console.log(fil);
   };
 
-  componentDidMount = async () => {
-    const response = await fetch("http://localhost:3001/getIncidents");
-    const myJson = await response.json();
-    // console.log(JSON.stringify(myJson));
-    this.setState({
-      incidents: [...myJson]
-    });
-  };
-
   render() {
     return (
       <div className="Incidents">
-        <h1 onClick={() => this.fetchData()}>Incidents</h1>
+        <h1>Incidents</h1>
         <span id="add" onClick={() => this.addIncident()}>
           <p
             style={
