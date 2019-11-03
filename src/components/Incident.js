@@ -3,14 +3,26 @@ import React, { useState } from "react";
 export default function Incident(props) {
   const [voluntering, setVoluntering] = useState(false);
   const [num, setNum] = useState(props.incident.volunteers);
+  const [donate, setDonate] = useState(false);
 
   const onVolunteer = () => {
     setVoluntering(true);
     setNum(parseInt(num, 10) + 1);
   };
 
+  const onDonate = () => {
+    setDonate(true);
+  };
+
   return (
     <div className="Incident">
+      {donate && (
+        <div className="donate-popup">
+          <div className="popped">
+            <img src={require("../images/paypal.png")} />
+          </div>
+        </div>
+      )}
       <img
         className="priority-img"
         src={require(`../images/${props.incident.priority}.png`)}
@@ -39,7 +51,7 @@ export default function Incident(props) {
         <div className="action-donate">
           <img src={require("../images/donate.png")} />
           <p>{props.incident.donation}</p>
-          <button>Donate</button>
+          <button onClick={() => onDonate()}>Donate</button>
         </div>
         <div>
           <img src={require("../images/volunteer.png")} />
